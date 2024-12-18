@@ -1,13 +1,21 @@
 #!/bin/bash
 
-which apache
+which pinta > /dev/null
 
-if [[ $? -q 0 ]]; then
+if [[ $? -ne 0 ]]; then
 
-	exit 0
-
-else 
-
+	echo "ERRO: 'pinta' nao instalado!"
 	exit 1
 
 fi
+
+which google-chrome > /dev/null
+
+if [[ $? -ne 0 ]]; then
+
+	echo "ERRO: 'google-chrome' nao instalado!"
+	exit 1
+
+fi
+
+exit 0
